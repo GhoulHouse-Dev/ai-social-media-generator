@@ -2,6 +2,12 @@
 
 An AI-powered module for generating platform-specific social media copy from tagged image elements and project context.
 
+## Browser demo
+
+The root page is a lightweight browser UI for testing the generator. Enter image tags and project context, choose platforms, tune client preferences, and click **Generate content**. Each caption has its own copy button, and the full caption set can be copied at once.
+
+Run it with a serverless-compatible local environment or deploy to Vercel so `/api/social-content` is available. The browser never receives the provider API key.
+
 ## Features
 
 - Three caption options per requested platform: Instagram, Facebook, and LinkedIn.

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generate social media captions, hashtags, and engagement prompts from project context.">
+  <title>Social Copy Studio</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">Social Copy <span>Studio</span></a>
+      <span class="status-dot"><i></i> AI content workspace</span>
+    </div>
+  </header>
+
+  <main class="container page-shell">
+    <section class="intro">
+      <p class="eyebrow">Content generation workspace</p>
+      <h1>Turn project context into <em>social-ready</em> copy.</h1>
+      <p class="intro-copy">Describe what is in the image, add your project context, and get platform-ready captions, hashtags, and conversation starters.</p>
+    </section>
+
+    <div class="workspace">
+      <form id="content-form" class="panel form-panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">01 · Inputs</p><h2>Shape your content</h2></div>
+          <button id="sample-button" class="text-button" type="button">Use sample</button>
+        </div>
+
+        <label for="image-tags">Tagged image elements <span>comma separated</span></label>
+        <input id="image-tags" name="imageTags" placeholder="e.g. product, team, natural light" autocomplete="off">
+
+        <label for="project-context">Project context</label>
+        <textarea id="project-context" name="projectContext" rows="5" placeholder="What is happening in this image? Include the campaign goal, key details, or story you want to tell."></textarea>
+
+        <fieldset>
+          <legend>Platforms</legend>
+          <div class="platform-grid">
+            <label class="check-card"><input type="checkbox" name="platforms" value="instagram" checked><span><strong>Instagram</strong><small>Visual & concise</small></span></label>
+            <label class="check-card"><input type="checkbox" name="platforms" value="facebook" checked><span><strong>Facebook</strong><small>Conversational</small></span></label>
+            <label class="check-card"><input type="checkbox" name="platforms" value="linkedin" checked><span><strong>LinkedIn</strong><small>Professional</small></span></label>
+          </div>
+        </fieldset>
+
+        <div class="two-col">
+          <div><label for="tone">Tone</label><select id="tone" name="tone"><option>professional</option><option>friendly</option><option>playful</option><option>authoritative</option><option>minimal</option><option>inspiring</option></select></div>
+          <div><label for="language">Language</label><input id="language" name="language" value="en" placeholder="e.g. en, fi"></div>
+        </div>
+        <label for="audience">Target audience <span>optional</span></label>
+        <input id="audience" name="audience" placeholder="e.g. first-time buyers, existing customers">
+        <div class="two-col">
+          <div><label for="brand-terms">Brand terms <span>optional</span></label><input id="brand-terms" placeholder="e.g. Acme Co, built better"></div>
+          <div><label for="avoid">Avoid <span>optional</span></label><input id="avoid" placeholder="e.g. jargon, unverified claims"></div>
+        </div>
+        <button class="primary-button" type="submit"><span>Generate content</span><b>→</b></button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <section class="panel results-panel" aria-labelledby="results-heading">
+        <div class="panel-heading"><div><p class="eyebrow">02 · Results</p><h2 id="results-heading">Your content set</h2></div><button id="copy-all" class="text-button" type="button" hidden>Copy all</button></div>
+        <div id="results" class="results-empty"><div class="empty-icon">✦</div><h3>Your generated copy will appear here</h3><p>Choose your inputs and generate a tailored content set for each platform.</p></div>
+      </section>
+    </div>
+  </main>
+  <footer class="container footer"><span>Social Copy Studio</span><span>Keep human judgment in the loop.</span></footer>
+</body>
+</html>
